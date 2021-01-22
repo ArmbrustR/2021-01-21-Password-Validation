@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PasswordValidationTest {
 
-
+   //EINFACHER TEST OB IN EINEM PW DER TEST AUFGEHT
    @Test
    public void passwordLongerXChar(){
        //GIVEN
@@ -24,6 +24,8 @@ public class PasswordValidationTest {
        assertEquals(true, passwordLongerXChar);
 
    }
+
+   // EINFACHER TEST OB IN EINEM PW DER TEST AUFGEHT
 
     @Test
     public void passwordContainsRequiredCharactersTest(){
@@ -38,6 +40,7 @@ public class PasswordValidationTest {
    }
 
 
+//PARAMETRISIERTER TEST MIT ARGUMENTEN
 
     @ParameterizedTest
     @MethodSource("factoryMethod") // <-- Name der Factory Methode; wenn leer, dann wird nach einer gleichnamigen gesucht
