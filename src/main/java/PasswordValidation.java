@@ -1,6 +1,5 @@
 public class PasswordValidation {
 
-
     public static void main(String[] args) {
     String password = "Hello";
     passwordContainsRequiredCharacters(password);
@@ -12,25 +11,29 @@ public class PasswordValidation {
     }
 
     public static boolean passwordContainsRequiredCharacters(String password){
-        char[] passwordCharArray = password.toCharArray();
+     // Also could be used:   char[] passwordCharArray = password.toCharArray();
+     // instead of char characterToCheck = password.charAt(i);
 
         int quantityOfDigits = 0;
         int quantityOfUpperCase = 0;
         int quantityOfLowerCase = 0;
 
-        for (int i = 0; i < passwordCharArray.length ; i++){
+        for (int i = 0; i < password.length() ; i++){
+            char characterToCheck = password.charAt(i);
 
-            if (Character.isDigit(passwordCharArray[i])){
+            if (Character.isDigit(characterToCheck)){
                 quantityOfDigits = quantityOfDigits +1;
             }
-            if (Character.isUpperCase(passwordCharArray[i])){
+            if (Character.isUpperCase(characterToCheck)){
                 quantityOfUpperCase = quantityOfUpperCase +1;
-                System.out.println(quantityOfUpperCase);
             }
-            if (Character.isLowerCase(passwordCharArray[i])) {
+            if (Character.isLowerCase(characterToCheck)) {
                 quantityOfLowerCase = quantityOfLowerCase + 1;
             }
         }
+
+
+
 
         boolean passwordRequirementsMatch = quantityOfDigits > 0 && quantityOfLowerCase > 0 && quantityOfUpperCase > 0;
         System.out.println(passwordRequirementsMatch);
@@ -38,4 +41,6 @@ public class PasswordValidation {
         return passwordRequirementsMatch;
 
     }
+
+
 }
